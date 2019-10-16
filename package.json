@@ -1,0 +1,25 @@
+{
+  "name": "mypage",
+  "description": "マイページ",
+  "version": "2.10.1",
+  "private": true,
+  "dependencies": {
+    "@nuxt/typescript-runtime": "0.2.1",
+    "@nuxtjs/axios": "5.6.0",
+    "nuxt": "2.10.1",
+    "nuxt-property-decorator": "2.4.0",
+    "vuex-class": "0.3.2"
+  },
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "0.3.1",
+    "@nuxtjs/markdownit": "^1.2.7",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0"
+  }
+}
