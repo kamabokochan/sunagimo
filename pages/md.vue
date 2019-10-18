@@ -8,7 +8,13 @@
     これがサンプルコードです。
     [こちら](/md_test)から、詳細が見れます。（大嘘）
 
-    ```.typescript
+    ```javascript
+    const dog = {};
+    dog.name = 'pochi';
+    dog.call = () => 'わん'
+    ```
+
+    ```typescript
     const dog = {};
     dog.name = 'pochi';
     dog.call = () => 'わん'
@@ -17,6 +23,14 @@
     <nuxt-link to="/">top</nuxt-link>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from "nuxt-property-decorator"
+
+@Component
+export default class extends Vue {
+}
+</script>
 
 <style lang="scss">
 * {

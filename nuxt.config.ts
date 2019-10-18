@@ -8,16 +8,14 @@ export default {
       { hid: "description", name: "description", content: "{{ description }}" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: '/highlight/styles/hopscotch.css' }
-    ],
-    script: [
-      { src: '/highlight/highlight.pack.js' },
-      { src: '/js/execution.js' }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ]
   },
   loading: { color: "#3B8070" },
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    '~/node_modules/highlight.js/styles/hopscotch.css'
+  ],
   build: {},
   buildModules: ["@nuxt/typescript-build"],
   modules: [
@@ -26,8 +24,19 @@ export default {
   ],
   axios: {},
   markdownit: {
-    preset: 'default',
+    // injected: true,
+    breaks: true,
+    langPrefix: "hljs language-", // コードブロックのCSSクラス名の接頭辞に付加します。
     linkify: true,
-    breaks: true
+    highlight: (str: any, lang: any) => {
+      const hljs = require('highlight.js');
+      if (lang) {
+        try {
+          return hljs.highlight(lang, str, true).value;
+        } catch (err) { }
+      }
+      // 言語設定がない場合、プレーンテキストとして表示する
+      return hljs.highlight('plaintext', str, true).value;
+    }
   }
 }
