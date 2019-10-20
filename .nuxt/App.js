@@ -9,7 +9,7 @@ import {
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../assets/css/main.css'
+import '../assets/css/style.scss'
 
 import '../node_modules/highlight.js/styles/hopscotch.css'
 

@@ -64,14 +64,6 @@
   https://www.google.com/
 
   ## コード
-  <!-- 実際は半角スペース4つ不要 -->
-      ``` js
-      var foo = function (bar) {
-        return bar++;
-      };
-
-      console.log(foo(5));
-      ```
 
   ## 絵文字
   :smile:

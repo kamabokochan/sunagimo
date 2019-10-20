@@ -1,5 +1,6 @@
 export default {
   env: {},
+  mode: 'spa',
   head: {
     title: "{{ name }}",
     meta: [
@@ -13,7 +14,7 @@ export default {
   },
   loading: { color: "#3B8070" },
   css: [
-    "~/assets/css/main.css",
+    "~/assets/css/style.scss",
     '~/node_modules/highlight.js/styles/hopscotch.css'
   ],
   build: {},
@@ -24,10 +25,14 @@ export default {
   ],
   axios: {},
   markdownit: {
-    // injected: true,
+    injected: true,
     breaks: true,
     langPrefix: "hljs language-", // コードブロックのCSSクラス名の接頭辞に付加します。
     linkify: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ],
     highlight: (str: any, lang: any) => {
       const hljs = require('highlight.js');
       if (lang) {

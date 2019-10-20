@@ -1,5 +1,5 @@
-import { Person } from "~/types";
+import { Post } from "~/types";
 
-export interface RootState {
-  people: Person[];
+export interface PostsState {
+  posts: Post[];
 }
