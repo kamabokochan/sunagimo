@@ -1,6 +1,5 @@
 export default {
   env: {},
-  mode: 'spa',
   head: {
     title: "{{ name }}",
     meta: [
