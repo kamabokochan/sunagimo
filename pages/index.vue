@@ -33,6 +33,11 @@ export default class extends Vue {
   flex-wrap: wrap;
   margin: 30px 60px;
   padding: 60px 30px;
+  @media screen and (max-width: 896px) {
+    display: block;
+    margin: 18px 0px;
+    padding: 60px 0;
+  }
   &::after {
     content: "";
     display: block;
@@ -42,6 +47,12 @@ export default class extends Vue {
 }
 .post-card {
   width: calc(33.3333% - 18px);
+  @media screen and (max-width: 896px) {
+    width: 100%;
+    + .post-card {
+      margin-top: 30px;
+    }
+  }
   &:nth-child(n + 4) {
     margin-top: 42px;
   }
