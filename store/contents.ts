@@ -1,5 +1,5 @@
 import { PostsState, Post } from "~/types";
-import { MutationTree, ActionTree } from "vuex";
+import { MutationTree, GetterTree, ActionTree } from "vuex";
 // import localPostsData from "~/contents/posts.json";
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ export const state = (): PostsState => ({
   post: []
 })
 
-export const getters: GetterTree<PostsState> = {
+export const getters: GetterTree<PostsState, PostsState> = {
   summary: state => state.summary,
   post: state => state.post
 }
@@ -29,13 +29,17 @@ export const actions: ActionTree<PostsState, PostsState> = {
   },
   async getContents({ commit, state }, id) {
     if (state.summary.length === 0) {
-      const summary = await axios.get("/dist/summary/summary.json")
-      commit("setSummary", Object.values(summary.data.fileMap))
+      try {
+        const summary = await axios.get("/dist/summary/summary.json")
+        commit("setSummary", Object.values(summary.data.fileMap))
+      }
+      catch (err) {
+        
+      }
     }
 
     const numID = Number(id)
-    const summary = state.summary[numID]
-    console.log(`/${summary.dir}/${summary.base}`)
+    const summary:any = state.summary[numID]
     const post = await axios.get(`/${summary.dir}/${summary.base}`.replace('/static', '')) // TODO かっこわるい
     commit("setPost", post.data)
   }

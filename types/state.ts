@@ -1,5 +1,6 @@
 import { Post } from "~/types";
 
 export interface PostsState {
-  posts: Post[];
+  summary: []
+  post: Post[]
 }
