@@ -17,11 +17,13 @@ a {
 
 @font-face { font-family: "Yu Gothic M"; src: local("Yu Gothic Medium"); }
 @font-face { font-family: "Yu Gothic M"; src: local("Yu Gothic Bold"); font-weight: bold; }
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap');
 
 body {
   line-height: 1.4;
   font-family:
     -apple-system,
+    'M PLUS Rounded 1c',
     "游ゴシック体", YuGothic,
     "Yu Gothic M",
     "游ゴシック Medium", "Yu Gothic Medium",

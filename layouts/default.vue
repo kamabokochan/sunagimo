@@ -11,6 +11,7 @@
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 .wrap {
+  background-color: #dfdede;
   position: relative;
   min-height: 100vh;
   padding-bottom: 60px;
@@ -27,7 +28,7 @@ header,
 footer {
   display: flex;
   align-items: center;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Muli';
 }
 footer {
   justify-content: center;

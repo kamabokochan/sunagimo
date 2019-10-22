@@ -61,9 +61,10 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .post {
   max-width: 800px;
-  margin: auto;
+  margin: 42px auto;
   padding: 180px 90px;
   font-size: 16px;
+  background-color: #fefefe;
   @media screen and (max-width: 896px) {
     padding: 120px 15px;
   }
