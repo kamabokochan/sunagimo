@@ -2,7 +2,7 @@
   "bodyContent": "#111",
   "bodyHtml": "<p>#111</p>\n",
   "title": "#111",
-  "dir": "contents/dist/2020",
+  "dir": "static/dist/json/2020",
   "base": "10-19.json",
   "ext": ".json",
   "sourceBase": "10-19.md",

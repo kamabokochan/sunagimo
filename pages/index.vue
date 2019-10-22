@@ -17,17 +17,9 @@ export default class extends Vue {
   @Getter("contents/summary") summary!: any
   @Action("contents/getSummary") getSummary: any
   async created() {
-    await this.getSummary();
+    await this.summary.length ? Promise.resolve() : this.getSummary();
   }
 }
 </script>
 
-<style scoped>
-.blog {
-  width: 800px;
-  margin: auto;
-  padding: 180px 0;
-  font-size: 16px;
-  line-height: 1.8;
-}
-</style>
+<style scoped></style>
