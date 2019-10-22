@@ -19,7 +19,7 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "md": "processmd \"static/contents/posts/**/*.{yml,md}\" --stdout --outputDir static/contents/dist/ > static/contents/summary/summary.json"
+    "md": "processmd \"static/posts/**/*.{yml,md}\" --stdout --outputDir static/dist/json/ > static/dist/summary/summary.json"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.3.1",
