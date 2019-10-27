@@ -37,9 +37,9 @@ export const actions: ActionTree<PostsState, PostsState> = {
         
       }
     }
-
+    
     const numID = Number(id)
-    const summary:any = state.summary[numID]
+    const summary:any = state.summary[numID] // TODO 型エラー対応する
     const post = await axios.get(`/${summary.dir}/${summary.base}`.replace('/static', '')) // TODO かっこわるい
     commit("setPost", post.data)
   }

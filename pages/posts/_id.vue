@@ -12,17 +12,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator"
-import { State, Action, Getter, Mutation, namespace } from "vuex-class"
+import { Component, Vue } from "nuxt-property-decorator";
+import { State, Action, Getter, Mutation, namespace } from "vuex-class";
 
 @Component
 export default class extends Vue {
-  @Getter("contents/post") post!: any
-  @Action("contents/getContents") getContents: any
+  @Getter("contents/post") post!: any;
+  @Action("contents/getContents") getContents: any;
 
   async created() {
-    await this.post.length ? Promise.resolve() : this.getContents(this.$route.params.id);
-    console.log(this.post)
+    (await this.post.length)
+      ? Promise.resolve()
+      : this.getContents(this.$route.params.id);
+    console.log(this.post);
   }
 }
 </script>
@@ -75,7 +77,7 @@ h1 {
   font-weight: normal;
   color: #555;
   background-color: #fbdbe7;
-  padding: 74px 42px;
+  padding: 64px 42px;
   border-top-left-radius: 140px;
   border-top-right-radius: 140px;
   border-bottom: solid 12px #d7b689;

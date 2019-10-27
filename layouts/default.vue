@@ -1,22 +1,37 @@
 <template>
-  <div class="wrap">
+  <div
+    class="wrap"
+    :style="{ minHeight: `${windowInnerHeight - footerHeight}px`, paddingBottom: `${footerHeight}px` }"
+  >
     <header>
       <nuxt-link to="/">KAMABOKO</nuxt-link>
     </header>
     <div class="contents">
-      <nuxt/>
+      <nuxt />
     </div>
-    <footer>© 2019 KAMABOKO</footer>
+    <footer :style="{height: `${footerHeight}px`}">© 2019 KAMABOKO</footer>
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from "nuxt-property-decorator";
+import { State, Action, Getter, Mutation, namespace } from "vuex-class";
+
+@Component({})
+export default class extends Vue {
+  windowInnerHeight: number = 0;
+  footerHeight: number = 60;
+  mounted() {
+    this.windowInnerHeight = window.innerHeight;
+  }
+}
+</script>
+
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 .wrap {
   background-color: #dfdede;
   position: relative;
-  min-height: 100vh;
-  padding-bottom: 60px;
 }
 header {
   height: 65px;
@@ -33,14 +48,13 @@ header,
 footer {
   display: flex;
   align-items: center;
-  font-family: 'Muli';
+  font-family: "Muli";
 }
 footer {
   justify-content: center;
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 60px;
   color: #fff;
   background-color: #d1597d;
 }
