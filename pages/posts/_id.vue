@@ -51,6 +51,7 @@ export default class extends Vue {
     margin: 30px 0;
     padding: 3px 24px;
     background: linear-gradient(90deg, #d1597d 8px, #fff 8px);
+    border-bottom: solid 1px #e8e7e7;
   }
   code.hljs {
     overflow-x: auto;
@@ -67,6 +68,7 @@ export default class extends Vue {
   padding: 180px 90px;
   font-size: 16px;
   background-color: #fefefe;
+  border-radius: 3px;
   @media screen and (max-width: 896px) {
     padding: 120px 15px;
   }

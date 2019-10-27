@@ -12,7 +12,6 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_markdownit_2f6bfaec from 'nuxt_plugin_markdownit_2f6bfaec' // Source: ./markdown-it.js (mode: 'all')
 import nuxt_plugin_axios_f2a91ec2 from 'nuxt_plugin_axios_f2a91ec2' // Source: ./axios.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -169,10 +168,6 @@ async function createApp (ssrContext) {
   }
 
   // Plugin execution
-
-  if (typeof nuxt_plugin_markdownit_2f6bfaec === 'function') {
-    await nuxt_plugin_markdownit_2f6bfaec(app.context, inject)
-  }
 
   if (typeof nuxt_plugin_axios_f2a91ec2 === 'function') {
     await nuxt_plugin_axios_f2a91ec2(app.context, inject)
