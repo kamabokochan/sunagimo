@@ -1,6 +1,10 @@
 <template>
   <div class="post-card-wrap">
-    <div v-for="(summary,index) in summary" :key="index" class="post-card">
+    <div
+      v-for="(summary,index) in [...summary].sort((a,b) => a.id - b.id)"
+      :key="index"
+      class="post-card"
+    >
       <nuxt-link
         :to="{ name:'posts-id', params:{ id: index, url: `${summary.dir}/${summary.base}` } }"
       >
@@ -97,5 +101,7 @@ export default class extends Vue {
 }
 .title {
   margin-top: 12px;
+  height: calc((16px * 1.4) * 2);
+  overflow: hidden;
 }
 </style>

@@ -31,27 +31,26 @@ export default class extends Vue {
 <style lang="scss">
 .parsed-md {
   margin-top: 180px;
+  line-height: 1.6;
   p + p,
   pre + p,
   p + pre {
-    margin-top: 12px;
+    margin-top: 16px;
   }
   a {
     color: #45b1a2;
-    display: block;
   }
   h2 {
-    margin: 60px 0;
+    margin: 60px 0 30px;
     padding-bottom: 24px;
     font-size: 28px;
     text-align: center;
     border-bottom: solid 4px #d1597d;
   }
   h3 {
-    margin: 30px 0;
-    padding: 3px 24px;
+    margin: 60px 0 30px;
+    padding: 4px 24px;
     background: linear-gradient(90deg, #d1597d 8px, #fff 8px);
-    border-bottom: solid 1px #e8e7e7;
   }
   code.hljs {
     overflow-x: auto;
@@ -59,13 +58,23 @@ export default class extends Vue {
     line-height: 1.6;
     border-radius: 3px;
   }
+  ul > li {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: "◆";
+      padding-right: 10px;
+      font-size: 10px;
+      color: #d1597d;
+    }
+  }
 }
 </style>
 <style lang="scss" scoped>
 .post {
   max-width: 800px;
   margin: 42px auto;
-  padding: 180px 90px;
+  padding: 180px 90px 90px;
   font-size: 16px;
   background-color: #fefefe;
   border-radius: 3px;
