@@ -24,7 +24,6 @@ export default class extends Vue {
     (await this.post.length)
       ? Promise.resolve()
       : this.getContents(this.$route.params.id);
-    console.log(this.post);
   }
 }
 </script>

@@ -1,13 +1,11 @@
 <template>
   <div class="post-card-wrap">
     <div
-      v-for="(summary,index) in [...summary].sort((a,b) => a.id - b.id)"
+      v-for="(summary,index) in [...summary].sort((a,b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())"
       :key="index"
       class="post-card"
     >
-      <nuxt-link
-        :to="{ name:'posts-id', params:{ id: index, url: `${summary.dir}/${summary.base}` } }"
-      >
+      <nuxt-link :to="`/posts/${summary.id}`">
         <p class="created-at">{{ summary.created_at }}</p>
         <ul class="tag-list">
           <li v-for="(tag, index) in summary.tags.split(',')" :key="index">{{ tag }}</li>
